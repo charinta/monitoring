@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Tool in Dolly Supply Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Remaining Issue
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -30,8 +30,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Tool in Input Supply
-                                    Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Issue Solve
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -53,8 +52,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Tool in
-                                    Disassembly Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PP
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -77,8 +75,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Tool in Reg.
-                                    Auto Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -102,8 +99,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Tool in
-                                    Reg. Manual Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PO
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -126,8 +122,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Tool
-                                    in Pre Assy Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR1
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -150,8 +145,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of
-                                    Tool in MC.Nt Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR2
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -174,8 +168,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number
-                                    of Tool in MC.Zol Pos
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR3
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -200,7 +193,7 @@
                         <div class="col-8">
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                                    Number of Tool in MC.Zol Spe
+                                    Number of List PR4
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -224,7 +217,7 @@
                         <div class="col-8">
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                                    Number of Tool
+                                    Number of List PR5
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -233,7 +226,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="fa fa-wrench text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="fa fa-clipboard text-lg opacity-10" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
@@ -248,7 +241,7 @@
                         <div class="col-8">
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                                    Number of Holder
+                                    Number of List PO1
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -257,7 +250,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="fa fa-toolbox text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="fa fa-clipboard text-lg opacity-10" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
@@ -272,7 +265,7 @@
                         <div class="col-8">
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                                    Number of User
+                                    Number of List PO2
                                 </p>
                                 <h5 class="font-weight-bolder mb-0">
                                     0
@@ -281,7 +274,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="fa fa-address-card text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="fa fa-clipboard text-lg opacity-10" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
