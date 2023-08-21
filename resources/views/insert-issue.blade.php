@@ -10,7 +10,7 @@
                 <div class="col-12 col-xl-3 pr-15">
                     <div class="card h-100 w-100 mt-n4 bg-gradient-dark">
                         <div class="card-header pb-0 p-3 bg-gradient-dark">
-                            <h4 class="mb-0 text-light"> <b>User Account </b></h4>
+                            <h4 class="mb-0 text-light"> <b>Insert Issue</b></h4>
                             <hr class="text-light">
                         </div>
                         {{-- form body --}}
@@ -19,37 +19,52 @@
                             <form id="insert-form" action="#" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="username" class="form-control-label text-light">Nama</label>
-                                    <input class="form-control" type="text" name="username" placeholder="Masukkan Nama">
-                                </div>
-                                <div class="form-group">
-                                    <label for="npk" class="form-control-label text-light">NPK</label>
-                                    <input class="form-control" type="text" name="npk" placeholder="Masukkan NPK">
-                                </div>
-                                <div class="form-group">
-                                    <label for="department" class="form-control-label text-light"
-                                        name="department">Department</label><br>
-                                    <select class="form-select" name="department">
-                                        <option value="#">1</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="role" class="form-control-label text-light" name="role">Role</label>
+                                    <label for="copro" class="form-control-label text-light" name="copro">COPRO</label>
                                     <br>
-                                    <select class="form-select" name="role">
-                                        <option value="">---Pilih Role---</option>
-                                        <option value="Admin">Admin</option>
-                                        <option value="User">User</option>
+                                    <select class="form-select" name="copro">
+                                        <option value="">1</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password" class="form-control-label text-light">Password</label>
-                                    <input class="form-control" type="password" name="password"
-                                        placeholder="Masukkan Password">
+                                    <label for="problem-issue" class="form-control-label text-light"
+                                        name="problem-issue">Problem
+                                        Issue</label>
+                                    <br>
+                                    <select class="form-select" name="problem-issue">
+                                        <option value="">1</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="due-date" class="form-control-label text-light" name="due-date">Due Date
+                                        Part</label>
+                                    <br>
+                                    <select class="form-select" name="due-date">
+                                        <option value="">1</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pic-project" class="form-control-label text-light" name="pic-project">PIC
+                                        Project</label>
+                                    <br>
+                                    <select class="form-select" name="pic-project">
+                                        <option value="">1</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pic-purchase" class="form-control-label text-light" name="pic-purchase">PIC
+                                        Purchase</label>
+                                    <br>
+                                    <select class="form-select" name="pic-purchase">
+                                        <option value="">1</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vendor" class="form-control-label text-light">Vendor</label>
+                                    <input class="form-control" type="text" name="vendor" placeholder="Masukkan Vendor">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Insert
-                                        User</button>
+                                        Issue</button>
                                 </div>
 
                                 <br>
@@ -65,7 +80,7 @@
                     <div class="card mb-4 mt-n4">
                         <div class="card-header pb-0">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0">User Account Table</h6>
+                                <h6 class="mb-0">Issue Table</h6>
                                 <form class="form-inline" method="get" action="#">
                                     <div class="row">
                                         <div class="col-md-11">
@@ -92,19 +107,22 @@
                                                 ID</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Nama Karyawan</th>
+                                                COPRO</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                NPK</th>
+                                                Problem Issue</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Station</th>
+                                                Due Date</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Role</th>
+                                                PIC Project</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
                                                 style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                                                Password</th>
+                                                PIC Purchase</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                Vendor</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                                 Action</th>

@@ -8,24 +8,24 @@
                 Dashboard
             @elseif(Request::is('user-account'))
                 User Account
-            @elseif(Request::is('register-pos'))
-                Register Pos
-            @elseif(Request::is('register-line-op'))
-                Register Line & OP
-            @elseif(Request::is('register-tool'))
-                Register Tool
-            @elseif(Request::is('register-holder'))
-                Register Holder
-            @elseif(Request::is('register-standar'))
-                Register Standar
-            @elseif(Request::is('resume-dashboard'))
-                Overview Resume Dashboard
-            @elseif(Request::is('resume-tool'))
-                Overview Resume Dashboard
-            @elseif(Request::is('resume-holder'))
-                Overview Resume Dashboard
-            @elseif(Request::is('register-item'))
-                Register Item
+            @elseif(Request::is('insert-issue'))
+                Insert Issue
+            @elseif(Request::is('handle-issue'))
+                Handle Issue
+            @elseif(Request::is('search-issue'))
+                Search Issue
+            @elseif(Request::is('insert-incoming'))
+                Insert Incoming
+            @elseif(Request::is('insert-pp'))
+                Insert PP
+            @elseif(Request::is('insert-pr'))
+                Insert PR
+            @elseif(Request::is('insert-po'))
+                Insert PO
+            @elseif(Request::is('resume'))
+                Resume
+            @elseif(Request::is('trace-item'))
+                Trace Item
             @endif
         </a>
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
