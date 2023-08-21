@@ -10,7 +10,7 @@
                 <div class="col-12 col-xl-3 pr-15">
                     <div class="card h-100 w-100 mt-n4 bg-gradient-dark">
                         <div class="card-header pb-0 p-3 bg-gradient-dark">
-                            <h4 class="mb-0 text-light"> <b>User Account </b></h4>
+                            <h4 class="mb-0 text-light"> <b>Trace Item</b></h4>
                             <hr class="text-light">
                         </div>
                         {{-- form body --}}
@@ -19,37 +19,22 @@
                             <form id="insert-form" action="#" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="username" class="form-control-label text-light">Nama</label>
-                                    <input class="form-control" type="text" name="username" placeholder="Masukkan Nama">
-                                </div>
-                                <div class="form-group">
-                                    <label for="npk" class="form-control-label text-light">NPK</label>
-                                    <input class="form-control" type="text" name="npk" placeholder="Masukkan NPK">
-                                </div>
-                                <div class="form-group">
-                                    <label for="department" class="form-control-label text-light"
-                                        name="department">Department</label><br>
-                                    <select class="form-select" name="department">
-                                        <option value="#">1</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="role" class="form-control-label text-light" name="role">Role</label>
+                                    <label for="copro" class="form-control-label text-light" name="copro">COPRO</label>
                                     <br>
-                                    <select class="form-select" name="role">
-                                        <option value="">---Pilih Role---</option>
-                                        <option value="Admin">Admin</option>
-                                        <option value="User">User</option>
+                                    <select class="form-select" name="copro">
+                                        <option value="">1</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password" class="form-control-label text-light">Password</label>
-                                    <input class="form-control" type="password" name="password"
-                                        placeholder="Masukkan Password">
+                                    <label for="item" class="form-control-label text-light" name="item">Item</label>
+                                    <br>
+                                    <select class="form-select" name="item">
+                                        <option value="">1</option>
+                                    </select>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Insert
-                                        User</button>
+                                        Issue</button>
                                 </div>
 
                                 <br>
@@ -65,7 +50,7 @@
                     <div class="card mb-4 mt-n4">
                         <div class="card-header pb-0">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0">User Account Table</h6>
+                                <h6 class="mb-0">SAP Data Table</h6>
                                 <form class="form-inline" method="get" action="#">
                                     <div class="row">
                                         <div class="col-md-11">
@@ -89,25 +74,76 @@
                                         <tr>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                ID</th>
+                                                PR Creation</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Nama Karyawan</th>
+                                                PR No</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                NPK</th>
+                                                PR Deliver</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Station</th>
+                                                PR Item No</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Role</th>
+                                                Item</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
                                                 style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                                                Password</th>
+                                                PR Qty</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PR Outstanding</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PR UoM</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PIC Pch</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PO Creation</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                Vendor</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                No PO</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PO Item No</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PO Qty</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PO UoM</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                PO Delivery</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                Act Delivery</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                GR Doc No.</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                GR Qty</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Action</th>
+                                                PO Outstanding Qty</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                Requester</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                Copro</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                No PP</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                Last Process</th>
                                         </tr>
                                     </thead>
                                     {{-- table body --}}
