@@ -23,6 +23,11 @@
                                     <input class="form-control" type="text" name="username" placeholder="Masukkan Nama">
                                 </div>
                                 <div class="form-group">
+                                    <label for="inisial" class="form-control-label text-light">Inisial</label>
+                                    <input class="form-control" type="text" name="inisial"
+                                        placeholder="Masukkan Inisial">
+                                </div>
+                                <div class="form-group">
                                     <label for="npk" class="form-control-label text-light">NPK</label>
                                     <input class="form-control" type="text" name="npk" placeholder="Masukkan NPK">
                                 </div>
@@ -95,6 +100,9 @@
                                                 Nama Karyawan</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
+                                                Nama Inisial</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                                 NPK</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
@@ -119,14 +127,14 @@
                                             <td class="text-center">
                                                 {{-- <form onsubmit="return confirm ('Apakah Anda Yakin?');"
                                                         action="{{ route('user-account.destroy', $users->id) }}"
-                                                        method="POST">
-                                                        {{-- icon edit --}}
+                                                        method="POST"> --}}
+                                                {{-- icon edit --}}
                                                 {{-- <a href="{{ route('user-account.edit', $users->id) }}"
-                                                            class="edit_user btn btn-sm btn-primary fa fa-edit"></a>
-                                                        <a href="javascript:void(0)" id="btn-edit-user"
-                                                            data-id="{{ $users->id }}"
-                                                            class="btn btn-edit-user btn-primary btn-sm fa fa-edit"></a>
-                                                        {{-- icon delete
+                                                            class="edit_user btn btn-sm btn-primary fa fa-edit"></a> --}}
+                                                {{-- <a href="javascript:void(0)" id="btn-edit-user"
+                                                    data-id="{{ $users->id }}"
+                                                    class="btn btn-edit-user btn-primary btn-sm fa fa-edit"></a> --}}
+                                                {{-- icon delete
                                                         @csrf
                                                         @method('DELETE') 
                                                         <button type="submit"
@@ -139,6 +147,7 @@
                             </div>
                         </div>
                     </div>
+                    @include('components.modal-edit-user')
                     <!-- Pagination Section -->
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-end">

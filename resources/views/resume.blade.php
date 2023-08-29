@@ -10,7 +10,7 @@
                 <div class="col-12 col-xl-3 pr-15">
                     <div class="card h-100 w-100 mt-n4 bg-gradient-dark">
                         <div class="card-header pb-0 p-3 bg-gradient-dark">
-                            <h4 class="mb-0 text-light"> <b>Trace Item</b></h4>
+                            <h4 class="mb-0 text-light"> <b>Resume</b></h4>
                             <hr class="text-light">
                         </div>
                         {{-- form body --}}

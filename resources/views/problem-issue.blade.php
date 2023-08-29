@@ -1,39 +1,47 @@
 @extends('layouts.user_type.guest')
+
 @section('content')
     <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+
+        {{-- FORM INSERT USER ACCOUNT --}}
         <div class="container-fluid py-4">
             <div class="row">
+                {{-- form header --}}
+                <div class="col-12 col-xl-3 pr-15">
+                    <div class="card h-100 w-100 mt-n4 bg-gradient-dark">
+                        <div class="card-header pb-0 p-3 bg-gradient-dark">
+                            <h4 class="mb-0 text-light"> <b>Problem Issue</b></h4>
+                            <hr class="text-light">
+                        </div>
+                        {{-- form body --}}
+                        <div class="card-body">
 
-                <div class="col-12">
-                    <div class="card mb-4 mt-n4 mb-5">
-                        <div class="card-header pb-0">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0"><b>Upload PO Data</b></h6>
-                                <form class="form-inline" method="get" action="#">
-                                    <div class="row">
-                                        <div class="col-md-13">
-                                            <div class="form-group">
-                                                <div class="input-group mb-4">
-                                                    {{-- <button type="submit"
-                                                    class=" btn btn-sm btn-info">Upload Data</button> --}}
-                                                    <a href="javascript:void(0)" id="btn-create-po"
-                                                        class="btn btn-sm btn-info">Upload Data</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                            <form id="insert-form" action="#" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="nama" class="form-control-label text-light">Nama Problem</label>
+                                    <input class="form-control" type="text" name="nama_problem"
+                                        placeholder="Masukkan Nama Problem">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Insert
+                                        Problem Issue</button>
+                                </div>
+
+                                <br>
+                            </form>
                         </div>
                     </div>
                 </div>
-                @include('components.modal-insert-po')
-                {{-- table --}}
-                <div class="col-12">
+                {{-- FORM USER ACCOUNT END --}}
+
+
+                {{-- Table --}}
+                <div class="col-12 col-xl-9">
                     <div class="card mb-4 mt-n4">
                         <div class="card-header pb-0">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0">SAP Data Table</h6>
+                                <h6 class="mb-0">Problem Issue Table</h6>
                                 <form class="form-inline" method="get" action="#">
                                     <div class="row">
                                         <div class="col-md-11">
@@ -41,7 +49,7 @@
                                                 <div class="input-group mb-4">
                                                     <span class="input-group-text"><i class="fa fa-search"></i></span>
                                                     <input class="form-control" placeholder="Search" type="text"
-                                                        name="search" value="{{ request('search') }}">
+                                                        name="search" value="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -49,66 +57,56 @@
                                 </form>
                             </div>
                         </div>
-
-
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
-                                <table class="table align-items-center justify-content-center mb-0 table-striped">
-
+                                <table class="table align-items-center justify-content-center mb-0">
+                                    {{-- table header --}}
                                     <thead>
                                         <tr>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO No</th>
+                                                ID</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                Doc Date</th>
+                                                Date</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PR Deliver</th>
+                                                Nama Problem</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO 1 Date</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO 1 PIC</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO Aging 1</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO 2 Date</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO 2 PIC</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO 2 Date</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                                                PO Status</th>
+                                                Action</th>
                                         </tr>
                                     </thead>
+                                    {{-- table body --}}
                                     <tbody>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="text-xs font-weight-bold mb-0 text-center">#
+                                            </td>
+
+                                            <td class="text-center">
+                                                {{-- <form onsubmit="return confirm ('Apakah Anda Yakin?');"
+                                                        action="{{ route('user-account.destroy', $users->id) }}"
+                                                        method="POST">
+                                                        {{-- icon edit --}}
+                                                {{-- <a href="{{ route('user-account.edit', $users->id) }}"
+                                                            class="edit_user btn btn-sm btn-primary fa fa-edit"></a>
+                                                        <a href="javascript:void(0)" id="btn-edit-user"
+                                                            data-id="{{ $users->id }}"
+                                                            class="btn btn-edit-user btn-primary btn-sm fa fa-edit"></a>
+                                                        {{-- icon delete
+                                                        @csrf
+                                                        @method('DELETE') 
+                                                        <button type="submit"
+                                                            class="delete_user btn btn-sm btn-outline-danger fa fa-trash"></button>
+                                                    </form> --}}
+                                            </td>
                                         </tr>
                                     </tbody>
-
                                 </table>
                             </div>
                         </div>
                     </div>
-
+                    <!-- Pagination Section -->
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-end">
                             <li class="page-item disabled">

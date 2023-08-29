@@ -38,9 +38,7 @@
                                     <label for="due-date" class="form-control-label text-light" name="due-date">Due Date
                                         Part</label>
                                     <br>
-                                    <select class="form-select" name="due-date">
-                                        <option value="">1</option>
-                                    </select>
+                                    <input class="form-control" type="date" name="due-date">
                                 </div>
                                 <div class="form-group">
                                     <label for="pic-project" class="form-control-label text-light" name="pic-project">PIC
@@ -61,6 +59,14 @@
                                 <div class="form-group">
                                     <label for="vendor" class="form-control-label text-light">Vendor</label>
                                     <input class="form-control" type="text" name="vendor" placeholder="Masukkan Vendor">
+                                </div>
+                                <div class="form-group">
+                                    <label for="handled-by" class="form-control-label text-light" name="handled-by">Handled
+                                        By</label>
+                                    <br>
+                                    <select class="form-select" name="handled-by">
+                                        <option value="">1</option>
+                                    </select>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Insert
@@ -123,6 +129,9 @@
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
                                                 style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                                                 Vendor</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                                style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                Act. Problem</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                                 Action</th>

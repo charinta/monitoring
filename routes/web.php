@@ -69,4 +69,7 @@ Route::get('insert-pp', function () {
 Route::get('trace-item', function () {
     return view('trace-item');
 })->name('trace-item');
+Route::get('problem-issue', function () {
+    return view('problem-issue');
+})->name('problem-issue');
 // });

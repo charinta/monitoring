@@ -14,7 +14,9 @@
                                         <div class="col-md-13">
                                             <div class="form-group">
                                                 <div class="input-group mb-4">
-                                                    <button type="submit" class=" btn btn-sm btn-info">Upload Data</button>
+                                                    <a href="javascript:void(0)" type="submit"
+                                                        class="btn-create-pp btn btn-sm btn-info" id="btn-create-pp">Upload
+                                                        Data</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,6 +128,7 @@
                             </div>
                         </div>
                     </div>
+                    @include('components.modal-insert-pp')
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-end">
                             <li class="page-item disabled">
