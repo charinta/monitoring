@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 class POController extends Controller
 {
-    // melihat data Shift
+    // melihat data PO
     public function index()
     {
         $po = PO::all();
@@ -67,27 +67,5 @@ class POController extends Controller
             'message' => 'Data Berhasil Disimpan!',
             'data'    => $po 
         ]);
-    }
-
-    // view ke halaman update
-    // public function edit($id)
-    // {
-    //     $shift = Shift::findOrFail($id);
-
-
-    //     return view('edit-shift', compact('shift'));
-    // }
-
-    // update data
-
-    
-
-    // delete data/hapus data
-    public function destroy(PO $po, $id)
-    {
-        $po = PO::findOrFail($id);
-        $po->delete();
-
-        return redirect()->route('insert-po.index');
     }
 }

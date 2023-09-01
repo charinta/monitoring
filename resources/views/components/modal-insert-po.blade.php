@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-insert-po" id="modalPO">TAMBAH POST</h5>
+                <h5 class="modal-tittle" id="modalPO">TAMBAH POST</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,7 +12,8 @@
 
                 <div class="form-group">
                     <label for="name" class="control-label">Upload File</label>
-                    <input type="file" class="form-control" id="upload">
+                    <input type="file" class="form-control" id="upload"
+                        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
                     <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-upload"></div>
                 </div>
 
@@ -37,85 +38,30 @@
     //action create post
     $('#store').click(function(e) {
         e.preventDefault();
+        var fileInput = $('#upload')[0];
+        var file = fileInput.files[0];
 
-        //define variable
-        let upload = $('#title').val();
-        let content = $('#content').val();
-        let token = $("meta[name='csrf-token']").attr("content");
+        if (file) {
+            var formData = new FormData();
+            formData.append('file', file);
 
-        //ajax
-        $.ajax({
-
-            url: `/posts`,
-            type: "POST",
-            cache: false,
-            data: {
-                "title": title,
-                "content": content,
-                "_token": token
-            },
-            success: function(response) {
-
-                //show success message
-                Swal.fire({
-                    type: 'success',
-                    icon: 'success',
-                    title: `${response.message}`,
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                //data post
-                let post = `
-                    <tr id="index_${response.data.id}">
-                        <td>${response.data.title}</td>
-                        <td>${response.data.content}</td>
-                        <td class="text-center">
-                            <a href="javascript:void(0)" id="btn-edit-post" data-id="${response.data.id}" class="btn btn-primary btn-sm">EDIT</a>
-                            <a href="javascript:void(0)" id="btn-delete-post" data-id="${response.data.id}" class="btn btn-danger btn-sm">DELETE</a>
-                        </td>
-                    </tr>
-                `;
-
-                //append to table
-                $('#table-posts').prepend(post);
-
-                //clear form
-                $('#title').val('');
-                $('#content').val('');
-
-                //close modal
-                $('#modal-insert-po').modal('hide');
-
-
-            },
-            error: function(error) {
-
-                if (error.responseJSON.title[0]) {
-
-                    //show alert
-                    $('#alert-title').removeClass('d-none');
-                    $('#alert-title').addClass('d-block');
-
-                    //add message to alert
-                    $('#alert-title').html(error.responseJSON.title[0]);
+            $.ajax({
+                url: '/insert-po',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    $('#response').text('File uploaded successfully.');
+                },
+                error: function() {
+                    $('#alert-upload').removeClass('alert-success').addClass('alert-danger').text(
+                        'Error uploading file.').removeClass('d-none');
                 }
-
-                if (error.responseJSON.content[0]) {
-
-                    //show alert
-                    $('#alert-content').removeClass('d-none');
-                    $('#alert-content').addClass('d-block');
-
-                    //add message to alert
-                    $('#alert-content').html(error.responseJSON.content[0]);
-                }
-
-            }
-
-        });
-
+            });
+        }
     });
+
     $('[data-dismiss="modal"]').click(function() {
         // Hide the modal with ID "modal-insert-po"
         $('#modal-insert-po').modal('hide');
