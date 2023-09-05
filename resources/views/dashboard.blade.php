@@ -1,4 +1,4 @@
-@extends('layouts.user_type.guest')
+@extends('layouts.user_type.auth')
 
 @section('content')
     <div class="row">
@@ -8,9 +8,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Remaining Issue
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Remaining Issue
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -30,9 +30,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of Issue Solve
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Number of Issue Solve
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -52,9 +52,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PP
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Number of List PP
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -75,9 +75,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Number of List PR
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -99,9 +99,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PO
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Number of List PO
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -122,9 +122,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR1
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Number of List PR1
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -145,9 +145,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR2
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Number of List PR2
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -168,9 +168,9 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Number of List PR3
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">Number of List PR3
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -192,10 +192,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">
                                     Number of List PR4
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -216,10 +216,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">
                                     Number of List PR5
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -240,10 +240,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">
                                     Number of List PO1
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>
@@ -264,10 +264,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">
+                                <p class="text-xs mb-0 text-capitalize font-weight-bold">
                                     Number of List PO2
                                 </p>
-                                <h5 class="font-weight-bolder mb-0">
+                                <h5 class="font-weight-bolder text-lg mb-0">
                                     0
                                 </h5>
                             </div>

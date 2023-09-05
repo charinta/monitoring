@@ -7,39 +7,43 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
+
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
+    use HasFactory, HasRoles;
     use HasApiTokens, HasFactory, Notifiable;
+    const user1 = 'user1';
+    const admin = 'admin';
+    const user2 = 'user2';
+    const viewer = 'viewer';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    protected $createdAtColumn = 'date_created';
+    public $timestamps = false;
+    protected $table = 'tbl_user_account';
+    protected $primaryKey = 'id';
+
     protected $fillable = [
-        'name',
-        'email',
+        'username',
+        'npk',
+        'pos',
+        'role',
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected static function boot()
+    {
+        parent::boot();
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+        static::creating(function ($user) {
+            $user->date_created = Carbon::now('Asia/Jakarta');
+        });
+
+        static::updating(function ($user) {
+            $user->date_modify = Carbon::now('Asia/Jakarta');
+        });
+    }
 }

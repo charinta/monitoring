@@ -1,72 +1,84 @@
 <?php
 
+use Illuminate\Foundation\Application;
+use Inertia\Inertia;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
+//Route::inertia('/', 'login');
+Route::get('/', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create']);
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-// Route::group(['middleware' => 'auth'], function () {
-// view ke dashboard
-Route::get('/', [HomeController::class, 'home']);
-Route::get('dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth', 'admin'])->group(function () {
 
-// view ke user account
-Route::get('user-account', function () {
-    return view('user-account');
-})->name('user-account');
+    // view ke user account
+    Route::get('user-account', function () {
+        return view('user-account');
+    })->name('user-account');
+    Route::get('insert-issue', function () {
+        return view('insert-issue');
+    })->name('insert-issue');
+    Route::get('handle-issue', function () {
+        return view('handle-issue');
+    })->name('handle-issue');
 
-Route::get('insert-issue', function () {
-    return view('insert-issue');
-})->name('insert-issue');
+    Route::get('insert-incoming', function () {
+        return view('insert-incoming');
+    })->name('insert-incoming');
+    Route::get('insert-pr', function () {
+        return view('insert-pr');
+    })->name('insert-pr');
+    Route::get('insert-po', function () {
+        return view('insert-po');
+    })->name('insert-po');
 
-// view ke register line op
-Route::get('handle-issue', function () {
-    return view('handle-issue');
-})->name('handle-issue');
+    Route::get('insert-pp', function () {
+        return view('insert-pp');
+    })->name('insert-pp');
 
-// view ke register op
-Route::get('search-issue', function () {
-    return view('search-issue');
-})->name('search-issue');
+    // });
+});
 
-// view ke register tool
-Route::get('insert-incoming', function () {
-    return view('insert-incoming');
-})->name('insert-incoming');
+Route::middleware('auth')->group(
+    function () {
+        Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard.index');
+        Route::get('search-issue', function () {
+            return view('search-issue');
+        })->name('search-issue');
+        Route::get('trace-item', function () {
+            return view('trace-item');
+        })->name('trace-item');
+        Route::get('resume', function () {
+            return view('resume');
+        })->name('resume');
+    }
+);
 
-// view ke register holder
-Route::get('insert-pr', function () {
-    return view('insert-pr');
-})->name('insert-pr');
+Route::middleware('auth', 'user1')->group(
+    function () {
+        Route::get('insert-issue', function () {
+            return view('insert-issue');
+        })->name('insert-issue');
+        Route::get('insert-incoming', function () {
+            return view('insert-incoming');
+        })->name('insert-incoming');
+        Route::get('insert-pr', function () {
+            return view('insert-pr');
+        })->name('insert-pr');
+        Route::get('insert-po', function () {
+            return view('insert-po');
+        })->name('insert-po');
+        Route::get('insert-pp', function () {
+            return view('insert-pp');
+        })->name('insert-pp');
+    }
+);
 
-// view ke register item
-Route::get('insert-po', function () {
-    return view('insert-po');
-})->name('insert-po');
-
-// view ke resume dashboard
-Route::get('resume', function () {
-    return view('resume');
-})->name('resume');
-
-// view ke register standard
-Route::get('insert-pp', function () {
-    return view('insert-pp');
-})->name('insert-pp');
-// view ke trace item
-Route::get('trace-item', function () {
-    return view('trace-item');
-})->name('trace-item');
-// });
+Route::middleware('auth', 'user2')->group(
+    function () {
+        Route::get('handle-issue', function () {
+            return view('handle-issue');
+        })->name('handle-issue');
+    }
+);
+require __DIR__ . '/auth.php';
