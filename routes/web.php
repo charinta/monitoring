@@ -74,6 +74,7 @@ Route::middleware('auth', 'user1')->group(
     }
 );
 
+<<<<<<< HEAD
 Route::middleware('auth', 'user2')->group(
     function () {
         Route::get('handle-issue', function () {
@@ -82,3 +83,27 @@ Route::middleware('auth', 'user2')->group(
     }
 );
 require __DIR__ . '/auth.php';
+=======
+// view ke register item
+Route::get('insert-po', function () {
+    return view('insert-po');
+})->name('insert-po');
+
+// view ke resume dashboard
+Route::get('resume', function () {
+    return view('resume');
+})->name('resume');
+
+// view ke register standard
+Route::get('insert-pp', function () {
+    return view('insert-pp');
+})->name('insert-pp');
+// view ke trace item
+Route::get('trace-item', function () {
+    return view('trace-item');
+})->name('trace-item');
+Route::get('problem-issue', function () {
+    return view('problem-issue');
+})->name('problem-issue');
+// });
+>>>>>>> 4dc08a9570c32a249e407e6256cdc6156611d378

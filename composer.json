@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -13,6 +16,9 @@
         "laravel/tinker": "^2.8",
         "spatie/laravel-permission": "^5.10",
         "tightenco/ziggy": "^1.0",
+        "maatwebsite/excel": "^3.1",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "psr/simple-cache": "2.0",
         "yajra/laravel-datatables-buttons": "^10.0",
         "yajra/laravel-datatables-oracle": "^10.6"
     },
@@ -55,7 +61,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/dusk"
+            ]
         }
     },
     "config": {
